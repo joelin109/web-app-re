@@ -1,2 +1,1 @@
-# web-app-re
-A web app with React
+# server-api-go
