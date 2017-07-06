@@ -1,0 +1,17 @@
+# Distribution / packaging
+.vscode/
+vendor/
+node_modules/
+www/dll/
+.idea
+*.xml
+*.log
+.DS_Store
+webapp/.DS_Store
+.vscode/launch.json
+www/index.bundle.js.map
+www/index.bundle.js
+www/admin.bundle.js.map
+www/admin.bundle.js
+www/vendor.dll.js
+www/vendor_admin.dll.js
