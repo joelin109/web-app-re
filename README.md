@@ -5,6 +5,14 @@
 
 - npm install
 <br>
+```
+# Modified for node_modules/material-ui/Drawer/Drawer.js (Line 233)
+width: this.props.width >= 736 ?  '100%' : this.props.width || theme.width,
+left: this.props.width >= 736 ? 'auto' : 0,
+top: this.props.open ? 0 : -10000,
+
+```
+<br>
 
 
 ### Step2
@@ -13,3 +21,6 @@
 - npm run i
 
 - open www/index.html with browser
+<br>
+
+

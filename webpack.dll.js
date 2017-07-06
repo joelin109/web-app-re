@@ -19,6 +19,7 @@ const vendor_admin_dll = [
 
 
 module.exports = {
+    cache: true,
     entry: {
         vendor: vendor_dll,
         vendor_admin: vendor_admin_dll
