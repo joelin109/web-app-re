@@ -90,7 +90,7 @@ export default class ArticleListFilter extends React.Component {
             </div>
             <div className="popup-content-text">
                 <p className="popup-content-text-title">Channel:</p>
-                <RadioButtonGroup className="popup-dialog-radio-group" onChange={this._handle_type_choose.bind(this)}
+                <RadioButtonGroup className="root-list-flex" onChange={this._handle_type_choose.bind(this)}
                     name="shipSpeed" defaultSelected={this.state.type}>
 
                     <RadioButton className="popup-dialog-radio"
@@ -106,7 +106,7 @@ export default class ArticleListFilter extends React.Component {
             </div>
             <div className="popup-content-text">
                 <p className="popup-content-text-title">Tag:</p>
-                <RadioButtonGroup className="popup-dialog-radio-group" onChange={this._handle_sex_choose.bind(this)}
+                <RadioButtonGroup className="root-list-flex" onChange={this._handle_sex_choose.bind(this)}
                     name="shipSpeed" defaultSelected={this.state.sex}>
 
                     <RadioButton className="popup-dialog-radio"
@@ -125,7 +125,7 @@ export default class ArticleListFilter extends React.Component {
 
             <div className="popup-content-text">
                 <p className="popup-content-text-title">Updated: {this.state.selectedLetter} {_status}</p>
-                <div className="popup-dialog-radio-group">
+                <div className="root-list-flex">
                     <DropDownMenu value={this.state.selectedLetter} onChange={this._handle_letter_select.bind(this)}>
                         <MenuItem value={'All'} primaryText="All" />
                         <MenuItem value={'3'} primaryText="Last 3 days" />

@@ -394,6 +394,10 @@
     margin: 20px;
 }
 
+.popup-content p {
+    margin-bottom: 0.6em;
+}
+
 .popup-dialog-radio {
     margin-bottom: 10px;
     margin-right: 30px;

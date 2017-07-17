@@ -18,7 +18,7 @@ class FilterListGithub extends React.Component {
             stepIndex: 0,
             stepValue: [0, 10],
             language: 'JavaScript',
-            starSlider: 6200,
+            starSlider: 6300,
             createdAt: twoYearAgo,
             fromCache: false,
 
@@ -69,7 +69,7 @@ class FilterListGithub extends React.Component {
 
             <div className="popup-content-text">
                 <p className="popup-content-text-title">Language:</p>
-                <RadioButtonGroup className="popup-dialog-radio-group" onChange={this._handle_language_choose.bind(this)}
+                <RadioButtonGroup className="root-list-flex" onChange={this._handle_language_choose.bind(this)}
                     name="shipSpeed" defaultSelected={this.state.language}>
 
                     <RadioButton className="popup-dialog-radio"
