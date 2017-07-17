@@ -1,5 +1,5 @@
 ### Step1
-- sudo git clone https://github.com/joelin109/web-app-re.git
+- git clone https://github.com/joelin109/web-app-re.git
 
 - cd web-app-re
 
