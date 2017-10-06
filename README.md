@@ -4,9 +4,7 @@
 
 $ git clone https://github.com/joelin109/web-app-re.git
 
-
 $ cd web-app-re
-
 
 $ npm install
 
@@ -25,11 +23,24 @@ top: this.props.open ? 0 : -10000,
 
 
 ### Step2
-- npm run dll
 
-- npm run i
+```$xslt
+$ npm run dll
 
-- open www/index.html with browser
+$ npm run i
+
+open www/index.html with browser
+```
+
+<br>
+
+```
+$ npm run a
+
+open www/admin.html with browser
+
+/*  Modified the setting, devtool ('eval' or 'cheap-module-source-map') in webpack.congfig.*.js  */
+```
 <br>
 
 
