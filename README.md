@@ -1,9 +1,17 @@
 ### Step1
-- git clone https://github.com/joelin109/web-app-re.git
 
-- cd web-app-re
+```$xslt
 
-- npm install
+$ git clone https://github.com/joelin109/web-app-re.git
+
+
+$ cd web-app-re
+
+
+$ npm install
+
+```
+
 <br>
 
 ```

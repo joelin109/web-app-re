@@ -1,5 +1,5 @@
 {
-    "name": "React-API-Go",
+    "name": "web-app-re",
     "version": "0.0.1",
     "description": "React-Gin-Postgres",
     "main": "server.js",
@@ -16,20 +16,20 @@
     "author": "Christophe Coenraets",
     "dependencies": {
         "compression": "^1.6.2",
-        "express": "^4.15.3",
+        "express": "^4.16.1",
         "path": "^0.12.7",
-        "react": "^15.6.1",
-        "react-dom": "^15.6.1",
-        "react-router-dom": "^4.1.1",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-router-dom": "^4.2.2",
         "react-markdown": "^2.4.5",
-        "material-ui": "^0.18.6",
-        "react-tap-event-plugin": "^2.0.1",
-        "draft-js": "^0.10.1",
-        "immutable": "^3.8.1",
-        "react-draft-wysiwyg": "^1.10.0",
+        "material-ui": "^0.19.3",
+        "react-tap-event-plugin": "^3.0.2",
+        "draft-js": "^0.10.3",
+        "immutable": "^3.8.2",
+        "react-draft-wysiwyg": "^1.10.12",
         "draftjs-to-html": "^0.7.2",
         "html-to-draftjs": "^0.1.0-beta7",
-        "webpack": "^3.4.1"
+        "webpack": "^3.6.0"
     },
     "devDependencies": {
         "babel-core": "^6.25.0",
