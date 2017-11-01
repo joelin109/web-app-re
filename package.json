@@ -16,7 +16,7 @@
     "author": "Christophe Coenraets",
     "dependencies": {
         "compression": "^1.6.2",
-        "express": "^4.16.1",
+        "express": "^4.16.2",
         "path": "^0.12.7",
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
@@ -29,7 +29,7 @@
         "react-draft-wysiwyg": "^1.10.12",
         "draftjs-to-html": "^0.7.2",
         "html-to-draftjs": "^0.1.0-beta7",
-        "webpack": "^3.6.0"
+        "webpack": "^3.8.1"
     },
     "devDependencies": {
         "babel-core": "^6.25.0",
