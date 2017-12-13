@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as service from './../service/dem/news-service';
-import * as act from './../setting/action';
+import * as act from './../constant/action-type';
 import * as tag from './../component/item/tag'
 import List, * as _list from './../component/list'
 import FilterListNews from './filter-list-news'

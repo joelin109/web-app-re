@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Drawer, Divider, MenuItem, FontIcon } from 'material-ui';
-import * as act from './../../setting/action'
+import * as act from './../../constant/action-type'
 
 class NavLeft extends React.Component {
     constructor() {

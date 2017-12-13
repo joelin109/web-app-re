@@ -1,3 +1,6 @@
+/**
+ * Created by joe on 12/13/17.
+ */
 export const Action_List_Github_Repository = 'Action_Github_Repository'
 export const Action_List_Github_Author = 'Action_Github_Author'
 export const Action_List_Article_Detail = 'Action_List_Article_Detail'

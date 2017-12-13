@@ -1,5 +1,5 @@
 import React from 'react';
-import * as act from './../../setting/action';
+import * as act from './../../constant/action-type';
 import FilterListBeer from './../popup/filter-list-beer'
 import FilterListGithub from './../popup/filter-list-github'
 

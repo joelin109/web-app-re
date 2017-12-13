@@ -1,6 +1,6 @@
 import React from 'react';
 import * as githubService from './../service/dem/github-service';
-import * as act from './../setting/action';
+import * as act from './../constant/action-type';
 import * as tag from './../component/item/tag'
 
 import List, * as _list from './../component/list'

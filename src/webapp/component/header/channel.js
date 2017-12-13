@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TButton } from './../wui'
-import * as act from './../../setting/action';
+import * as act from './../../constant/action-type';
 
 const _topnews='今日头条'; //"今日头条"
 const _geek='Geek';

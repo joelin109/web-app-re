@@ -1,6 +1,6 @@
 import React from 'react';
 import * as productService from './../service/dem/product-service';
-import * as act from './../setting/action';
+import * as act from './../constant/action-type';
 
 import List, * as _list from './../component/list'
 import FilterListBeer from './filter-list-beer'

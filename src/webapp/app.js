@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import * as act from './setting/action';
+import * as act from './constant/action-type';
 import Header from './component/header';
 import HeaderChannel from './component/header/channel';
 import Recommend from './component/recommend';
@@ -113,7 +113,7 @@ export default class App extends React.Component {
 
 
     render() {
-        //let _switchAdmin = (window.location.href.indexOf("admin?_t") > 0);
+        let _switchAdmin = (window.location.href.indexOf("deutsch?_t") > 0);
         //_switchAdmin = _switchAdmin === false ? !(window.location.href.indexOf("?_") > 0) : true;
 
         const { location } = this.props
@@ -141,7 +141,7 @@ export default class App extends React.Component {
                             <Route path='/detail?_v=:id' component={DetailGithub} />
 
                         </div>
-                        <Recommend value={0} />
+                        {_switchAdmin ? '' : <Recommend value={0} />}
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, } from 'material-ui/Card';
-import * as act from './../../setting/action';
+import * as act from './../../constant/action-type';
 var Markdown = require('react-markdown');
 
 

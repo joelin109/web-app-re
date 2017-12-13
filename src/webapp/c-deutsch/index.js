@@ -1,6 +1,6 @@
 import React from 'react';
 import * as wordService from './../service/dem/word-service';
-import * as act from './../setting/action';
+import * as act from './../constant/action-type';
 
 import ListTable from './../component/list/list-table'
 

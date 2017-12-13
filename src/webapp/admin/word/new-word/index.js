@@ -2,7 +2,7 @@ import React from 'react'
 import { Drawer } from 'material-ui';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import { FloatingButton } from './../../../component/wui'
-import * as act from './../../../setting/action'
+import * as act from './../../../constant/action-type'
 import * as util from './../../../util'
 import DetailHeader from './../../detail-header'
 import WordTabBasic from './word-tab-basic'

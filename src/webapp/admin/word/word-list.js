@@ -3,7 +3,7 @@ import { Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow
   from 'material-ui/Table';
 import { TextField, Toggle, FlatButton, IconButton } from 'material-ui';
 import { SIcon } from './../../component/wui'
-import * as act from './../../setting/action'
+import * as act from './../../constant/action-type'
 
 
 

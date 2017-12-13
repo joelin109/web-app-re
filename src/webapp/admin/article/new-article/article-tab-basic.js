@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextField, RadioButtonGroup, RadioButton, Toggle, Checkbox, DropDownMenu, MenuItem } from 'material-ui';
-import * as act from './../../../setting/action'
+import * as act from './../../../constant/action-type'
 import * as util from './../../../util'
 import { Button, _colorLightGray, _colorSelected } from './../../../component/wui'
 

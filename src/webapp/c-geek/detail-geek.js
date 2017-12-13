@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Drawer, Divider, Avatar, RaisedButton } from 'material-ui';
 import ListItem from 'material-ui/List/ListItem';
-import * as act from './../setting/action'
+import * as act from './../constant/action-type'
 import { Button, FButton } from './../component/wui'
 
 /* Modified for material-ui/Drawer/Drawer.js (Line 233)

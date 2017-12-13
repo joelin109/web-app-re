@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import * as act from './setting/action';
+import * as act from './constant/action-type';
 import Header from './component/header';
 import AdminWord from './admin/word';
 import AdminArticle from './admin/article';
