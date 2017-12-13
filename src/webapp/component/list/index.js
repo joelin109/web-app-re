@@ -2,7 +2,7 @@ import React from 'react';
 import { FloatingButton } from './../wui'
 import ListCard from './list-card'
 import Paginator from './paginator';
-import { itemCovers, userThumbs } from './../../setting/data'
+import { itemCovers, userThumbs } from './../../service/data'
 const covers = itemCovers
 const thumbs = userThumbs
 

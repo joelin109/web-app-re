@@ -1,6 +1,6 @@
 import React from 'react';
 import * as service from './../../service/article';
-import * as act from './../action';
+import * as act from './../action-type';
 import * as tag from './../../component/item/tag'
 import List, * as _list from './../../component/list'
 import ArticleListFilter from './article-list-filter'

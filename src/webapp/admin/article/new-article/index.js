@@ -3,7 +3,7 @@ import * as service from './../../../service/article';
 import { Drawer } from 'material-ui';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import { FloatingButton } from './../../../component/wui'
-import * as act from './../../action'
+import * as act from './../../action-type'
 import * as util from './../../../util'
 import DetailHeader from './../../detail-header'
 import ArticleTabBasic from './article-tab-basic'

@@ -2,7 +2,7 @@ import React from 'react';
 import * as service from './../../service';
 import { Card, } from 'material-ui/Card';
 import { Button, StarRating, _colorDefault, _colorLightGray, _colorSelected } from './../../component/wui'
-import * as act from './../action';
+
 
 const _action_List_Item_Cover = 'Action_List_Item_Cover';
 const _action_List_Item_Edit = 'Action_List_Item_Edit';

@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconMenu, IconButton, MenuItem } from 'material-ui';
 import { Button, Icon } from './../component/wui'
-import * as act from './action'
+import * as act from './action-type'
 
 export default class DetailHeader extends React.Component {
     constructor(props) {

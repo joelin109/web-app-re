@@ -1,4 +1,4 @@
-import { api_result_word } from './../../setting/data/word'
+import { api_result_word } from '../data/word'
 
 
 export let findAll = (data) => {

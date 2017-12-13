@@ -1,4 +1,4 @@
-import { api_result_news } from './../../setting/data/news'
+import { api_result_news } from '../data/news'
 //c53e3bc3f12b4f8ba9b7505d14a4d9f3
 
 export let findAll = (data) => {
