@@ -26,7 +26,7 @@ class FilterListWord extends React.Component {
 
 
     _handleCancel() {
-        this.props.dispatch({ type: "cancel", data: false })
+        this.props.dispatch({ type: "cancel", payload: false })
     };
 
     _handleConfirm() {

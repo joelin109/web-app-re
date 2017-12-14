@@ -52,7 +52,7 @@ export default class HeaderChannel extends Component {
         break;
     }
 
-    this.props.dispatch({ type: _type, display: _display, data: _data, filter: _filter })
+    this.props.dispatch({ type: _type, display: _display, payload: _data, filter: _filter })
     return false;
   }
 

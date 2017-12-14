@@ -68,7 +68,7 @@ export default class Channel extends React.Component {
     _switch_channel(newChannel, willExcute = true) {
         this.state.channel = newChannel;
         this.state.filterData = newChannel.filter;
-        this.state.filterRange = newChannel.data;
+        this.state.filterRange = newChannel.payload;
         this.state.page = 1;
 
         if (willExcute) {

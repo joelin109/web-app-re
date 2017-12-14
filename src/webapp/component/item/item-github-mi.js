@@ -29,14 +29,14 @@ export default class ItemGithub extends React.Component {
         //alert(this.props.value.coverSrc)
         let action = {
             type: Action_List_Github_Repository,
-            data: this.props.value
+            payload: this.props.value
         }
         this.props.dispatch(action)
     };
     _handleAuthor(e) {
         let action = {
             type: Action_List_Github_Author,
-            data: e.target.id
+            payload: e.target.id
         }
         this.props.dispatch(action)
     };

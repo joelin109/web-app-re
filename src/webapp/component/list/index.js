@@ -51,26 +51,26 @@ export default class List extends React.Component {
 
     _dispatch_list_page_previous() {
         this.state.page = this.state.page - 1;
-        this.props.dispatch({ type: List_Page_Previous, data: this.state.page });
+        this.props.dispatch({ type: List_Page_Previous, payload: this.state.page });
         return false;
     }
 
     _dispatch_list_page_next() {
         this.state.page = this.state.page + 1;
-        this.props.dispatch({ type: List_Page_Next, data: this.state.page });
+        this.props.dispatch({ type: List_Page_Next, payload: this.state.page });
         return false;
     }
 
     _handle_list_filter() {
-        this.props.dispatch({ type: List_Filter, data: '' });
+        this.props.dispatch({ type: List_Filter, payload: '' });
         return false;
     }
     _handle_list_new() {
-        this.props.dispatch({ type: List_New, data: '' });
+        this.props.dispatch({ type: List_New, payload: '' });
         return false;
     }
     _handle_list_refresh() {
-        this.props.dispatch({ type: List_Refresh, data: '' });
+        this.props.dispatch({ type: List_Refresh, payload: '' });
         return false;
     }
 

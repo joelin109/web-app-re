@@ -24,11 +24,11 @@ class ItemCard extends React.Component {
 
 
     _handleAuthor(e) {
-        this.props.dispatch({ type: act.Action_List_Article_Author, data: e.target.id })
+        this.props.dispatch({ type: act.Action_List_Article_Author, payload: e.target.id })
     };
 
     _handleDetail(e) {
-        this.props.dispatch({ type: act.Action_List_Article_Detail, data: e.target.src })
+        this.props.dispatch({ type: act.Action_List_Article_Detail, payload: e.target.src })
     };
 
     _handleRange(e) {

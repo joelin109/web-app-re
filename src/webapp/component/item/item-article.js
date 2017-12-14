@@ -23,12 +23,12 @@ export default class ItemArticle extends React.Component {
 
 
     _handleDetail(e) {
-        this.props.dispatch({ type: act.Action_List_Article_Detail, data: e.target.src })
+        this.props.dispatch({ type: act.Action_List_Article_Detail, payload: e.target.src })
     };
 
 
     _handleTag(e) {
-        this.props.dispatch({ type: act.Action_List_Article_Tag, data: e.target.innerHTML })
+        this.props.dispatch({ type: act.Action_List_Article_Tag, payload: e.target.innerHTML })
     };
 
 

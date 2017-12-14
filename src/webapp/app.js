@@ -38,7 +38,7 @@ export default class App extends React.Component {
     _dispatch_header_navigator(action) {
         switch (action.type) {
             case act.Action_Filter_List_Article_Confirm:
-                alert(action.data)
+                alert(action.payload)
                 break;
 
             case act.Action_Admin_Channel_Type_Word:
