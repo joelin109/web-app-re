@@ -70,12 +70,12 @@ export default class ArticleListItem extends React.Component {
         let _updateItem = this.props.value;
         _updateItem["is_recommend"] = this.state.isRecommend;
         _updateItem["publish_status"] = this.state.status;
-        this.props.dispatch({ type: _action_List_Item_Update, data: _updateItem })
+        this.props.dispatch({ type: _action_List_Item_Update, payload: _updateItem })
     }
 
 
     _handle_item_cover(e) {
-        this.props.dispatch({ type: _action_List_Item_Cover, data: this.props.value })
+        this.props.dispatch({ type: _action_List_Item_Cover, payload: this.props.value })
         //this.props.dispatch({ type: act.Action_List_Article_Detail, data: e.target.src })
     };
 
@@ -106,7 +106,7 @@ export default class ArticleListItem extends React.Component {
     };
 
     _handle_item_edit() {
-        this.props.dispatch({ type: _action_List_Item_Edit, data: this.props.value })
+        this.props.dispatch({ type: _action_List_Item_Edit, payload: this.props.value })
     };
 
 

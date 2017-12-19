@@ -148,7 +148,7 @@ export default class NewArticle extends React.Component {
     _dispatch_tab_basic(action) {
         switch (action.type) {
             case act.Action_Handle_Save:
-                this.state.source = action.data;
+                this.state.source = action.payload;
                 break;
 
             default:
@@ -160,7 +160,7 @@ export default class NewArticle extends React.Component {
     _dispatch_tab_desc(action) {
         switch (action.type) {
             case act.Action_Handle_Save:
-                this.state.editorHtml = action.data;
+                this.state.editorHtml = action.payload;
                 break;
 
             default:
@@ -173,9 +173,10 @@ export default class NewArticle extends React.Component {
         let _blank = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
         let _className = util.isSafari() === false ? 'draw-detail-root color-dark' : '';
         let _classNameHeader = this.state.open ? 'w-limit-xx8' : '';
+
         if (this.state.open === false) {
-            this.state.tabIndex = 1;
-            return (<div></div>);
+            //this.state.tabIndex = 1;
+            //return (<div></div>);
         }
 
         return (
@@ -211,7 +212,9 @@ export default class NewArticle extends React.Component {
                                         onRefresh={this.state.refresh}
                                     />
                                 </Tab>
-                                <Tab label="Preview &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" onActive={this._handle_tab_preview}>
+                                <Tab
+                                    label="Preview &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                                    onActive={this._handle_tab_preview}>
 
                                 </Tab>
                             </Tabs>

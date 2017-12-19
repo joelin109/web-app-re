@@ -85,7 +85,7 @@ export default class ArticleTabBasic extends React.Component {
         _source.desc = this.state.desc;
         _source.id = this.state.articleID;
 
-        let _action = { type: _action_Handle_Save, data: _source };
+        let _action = { type: _action_Handle_Save, payload: _source };
         this.props.dispatch(_action);
         this.state.willUpdate = true;
     }

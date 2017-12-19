@@ -41,8 +41,9 @@ export default class RichTextEditor extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.state.refresh = false;
         this.state.open = nextProps.open;
+
         if (nextProps.onSave) {
-            let _action = { type: _action_Handle_Save, data: this.state.editorHtml };
+            let _action = { type: _action_Handle_Save, payload: this.state.editorHtml };
             this.props.dispatch(_action);
             this.state.willUpdate = false;
         }
@@ -93,11 +94,11 @@ export default class RichTextEditor extends React.Component {
     _dispatch_tab_content_editor(action) {
 
         if (action.type !== 'componentDidUpdate') {
-            let _editorContent = action.data;
+            let _editorContent = action.payload;
             this.state.editorContent = _editorContent;
             this.state.editorHtml = convert.toHtml(_editorContent);
 
-            let _action = { type: _action_Handle_Save, data: this.state.editorHtml };
+            let _action = { type: _action_Handle_Save, payload: this.state.editorHtml };
             this.props.dispatch(_action);
         }
 
@@ -105,10 +106,10 @@ export default class RichTextEditor extends React.Component {
     }
 
     _dispatch_tab_content_html(action) {
-        let _html = action.data;
+        let _html = action.payload;
         this.state.editorChange = this._parse_content_htm(_html)
 
-        let _action = { type: _action_Handle_Save, data: this.state.editorHtml };
+        let _action = { type: _action_Handle_Save, payload: this.state.editorHtml };
         this.props.dispatch(_action);
     }
 

@@ -134,7 +134,7 @@ export default class AdminArticle extends React.Component {
                 this._list_findAll(true)
                 break;
             default:
-                this.state.page = action.data;
+                this.state.page = action.payload;
                 this._list_findAll(action.type === _list.List_Page_Next)
                 break;
         }
@@ -144,13 +144,13 @@ export default class AdminArticle extends React.Component {
     _dispatch_list_item(action) {
         switch (action.type) {
             case act.Action_List_Item_Update:
-                this._listItemStatusUpdate(action.data)
+                this._listItemStatusUpdate(action.payload)
                 break;
             case act.Action_List_Item_Edit:
-                this._setEditOrNew(action.data, false)
+                this._setEditOrNew(action.payload, false)
                 break;
             case act.Action_List_Item_Cover:
-                this._setEditOrNew(action.data, false)
+                this._setEditOrNew(action.payload, false)
                 break;
 
             default:
@@ -166,7 +166,7 @@ export default class AdminArticle extends React.Component {
                 this._setFilter(false);
                 break;
             case act.Action_Handle_Save:
-                this._listItemUpdate(action.data)
+                this._listItemUpdate(action.payload)
                 break;
 
             default:
@@ -180,7 +180,7 @@ export default class AdminArticle extends React.Component {
     _dispatch_list_filter(action) {
         switch (action.type) {
             case act.Action_List_Filter_Confirm:
-                this.state.filterData = action.data;
+                this.state.filterData = action.payload;
                 this.state.page = 1;
                 this._list_findAll(true)
                 break;

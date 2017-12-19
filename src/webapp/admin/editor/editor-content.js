@@ -32,7 +32,7 @@ export default class EditorContent extends React.Component {
 
         let _action = {
             type: 'componentDidUpdate',
-            data: this.state.editorContents[0]
+            payload: this.state.editorContents[0]
         };
 
         this.props.dispatch(_action);
@@ -99,7 +99,7 @@ export default class EditorContent extends React.Component {
 
         let _action = {
             type: '',
-            data: this.state.editorContents[0]
+            payload: this.state.editorContents[0]
         };
         this.props.dispatch(_action);
     }

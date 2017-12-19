@@ -103,10 +103,10 @@ export default class AdminWord extends React.Component {
 
     switch (action.type) {
       case act.Action_List_Article_Tag:
-        this._action_list_article_tag(action.data)
+        this._action_list_article_tag(action.payload)
         break;
       case act.Action_Admin_Word_List_Sort:
-        alert(action.data)
+        alert(action.payload)
         break;
 
       default:
@@ -126,7 +126,7 @@ export default class AdminWord extends React.Component {
   }
 
   _dispatch_list_item(action) {
-    let _item = action.data;
+    let _item = action.payload;
     switch (action.type) {
       case act.Action_Admin_Word_List_Item_Modify:
         this.setState({

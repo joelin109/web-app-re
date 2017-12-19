@@ -32,7 +32,7 @@ export default class EditorContentHtml extends React.Component {
 
         let _action = {
             type: '',
-            data: this.state.editorHtml
+            payload: this.state.editorHtml
         };
         this.props.dispatch(_action);
     }

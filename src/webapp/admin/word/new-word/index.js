@@ -84,7 +84,7 @@ export default class NewWord extends React.Component {
     }
 
     _dispatch_tab_desc(action) {
-        this.state.editorContent = action.data;
+        this.state.editorContent = action.payload;
     }
 
     render() {

@@ -57,7 +57,7 @@ export default class Deutsch extends React.Component {
 
         switch (action.type) {
             case 'page':
-                this.state.page = action.data;
+                this.state.page = action.payload;
                 this._list_findAll(true)
                 break;
 
@@ -71,11 +71,11 @@ export default class Deutsch extends React.Component {
     _dispatch_list_item(action) {
         switch (action.type) {
             case act.Action_List_Github_Repository:
-                window.open(action.data, '_blank');
+                window.open(action.payload, '_blank');
                 //this._router_link_detail(action)
                 break;
             default:
-                alert(action.type + "-" + action.data)
+                alert(action.type + "-" + action.payload)
                 break;
         }
         return false;
@@ -84,7 +84,7 @@ export default class Deutsch extends React.Component {
     _dispatch_list_filter_popup(action) {
         switch (action.type) {
             case act.Action_Filter_List_Github_Confirm:
-                this.state.filterData = action.data;
+                this.state.filterData = action.payload;
                 this.state.page = 1;
                 this._list_findAll(true)
                 break;
