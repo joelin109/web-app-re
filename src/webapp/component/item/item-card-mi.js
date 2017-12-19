@@ -12,6 +12,8 @@ class ItemCard extends React.Component {
             expanded: false,
             loading: true,
         };
+
+        this._handleRange = this._handleRange.bind(this)
     }
 
     componentDidMount() {
@@ -23,23 +25,11 @@ class ItemCard extends React.Component {
     }
 
 
-    _handleAuthor(e) {
-        this.props.dispatch({ type: act.Action_List_Article_Author, payload: e.target.id })
-    };
-
-    _handleDetail(e) {
-        this.props.dispatch({ type: act.Action_List_Article_Detail, payload: e.target.src })
-    };
-
     _handleRange(e) {
-        let _float =  parseFloat(e.target.innerHTML);
+        let _float = parseFloat(e.target.innerHTML);
         let _int = parseInt(e.target.innerHTML);
-        let _range = _float%1 === 0 ? [_float, _float + 0.9] : [_int, _int + 1];
-        this.props.dispatch({ type: act.Action_List_Article_Range, data: _range })
-    };
-
-    _handleTag(e) {
-        this.props.dispatch({ type: act.Action_List_Article_Tag, data: e.target.innerHTML })
+        let _range = _float % 1 === 0 ? [_float, _float + 0.9] : [_int, _int + 1];
+        this.props.dispatch({ type: act.Action_List_Article_Range, payload: _range })
     };
 
     _markdownHtml(title) {
@@ -64,7 +54,7 @@ class ItemCard extends React.Component {
         if (this.props.value.tags) {
             let tags = this.props.value.tags.split(', ');
             pills = tags.map((tag, i) =>
-                <li2 key={i}><p className="word" onClick={this._handleTag.bind(this)}>{tag}</p></li2>
+                <li2 key={i}><p className="word" onClick={this.props.onClickTag}>{tag}</p></li2>
             );
         }
         let _title = this.props.value.name;
@@ -79,10 +69,10 @@ class ItemCard extends React.Component {
                         <img
                             className="itemBox-img-cover" id="im-user-id"
                             src={_coverSrc}
-                            onClick={this._handleDetail.bind(this)}
+                            onClick={this.props.onClickDetail}
                         />
                         <div className="itemBox-img-author">
-                            <p className="itemBox-img-author-name" onClick={this._handleRange.bind(this)}>
+                            <p className="itemBox-img-author-name" onClick={this._handleRange}>
                                 {parseFloat(this.props.value.alcohol)}
                             </p>
                         </div>

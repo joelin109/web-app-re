@@ -1,10 +1,6 @@
 /**
  * Created by joe on 12/13/17.
  */
-export const Action_List_Github_Repository = 'Action_Github_Repository'
-export const Action_List_Github_Author = 'Action_Github_Author'
-export const Action_List_Article_Detail = 'Action_List_Article_Detail'
-export const Action_List_Article_Author = 'Action_List_Article_Author'
 export const Action_List_Article_Tag = 'Action_List_Article_Tag'
 export const Action_List_Article_Range = 'Action_List_Article_Range'
 
@@ -45,6 +41,7 @@ export const Action_Admin_New_Word_Confirm = 'Action_Admin_New_Word_Confirm'
 
 export const Action_List_Filter = 'Action_List_Filter';
 export const Action_List_Filter_Confirm = 'Action_List_Filter_Confirm'
+export const Action_List_Item_Detail = 'Action_List_Item_Detail';
 export const Action_List_Item_New = 'Action_List_Item_New';
 export const Action_List_Item_Cover = 'Action_List_Item_Cover';
 export const Action_List_Item_Link = 'Action_List_Item_Link';

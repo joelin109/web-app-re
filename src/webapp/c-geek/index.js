@@ -19,10 +19,10 @@ export default class Geek extends React.Component {
             total: 0,
             page: 1,
             filterData: { language: 'JavaScript', star: 10000, createdAt: new Date('2014-03-23')},
-            filterVisible: false,
             detailObject: {},
+            filterVisible: false,
             detailVisible: false,
-            willNeedUpdate: false,
+            listShouldUpdate: true,
         }
     }
     componentDidMount() {
@@ -30,10 +30,10 @@ export default class Geek extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        this._component_should_update(false);
+        this._list_should_update(false);
     }
     shouldComponentUpdate(nextProps, nextState) {
-        return this.state.willNeedUpdate;
+        return true;
     }
 
 
@@ -48,7 +48,7 @@ export default class Geek extends React.Component {
         githubService.findAll(filter)
             .then(data => {
 
-                this._component_should_update(true, true)
+                this._list_should_update(true, true)
                 this.setState({
                     results: data.items,
                     total: data.total_count
@@ -56,13 +56,13 @@ export default class Geek extends React.Component {
             });
     }
 
-    _component_should_update(willUpdate = true, willScroll = false) {
+    _list_should_update(willUpdate = true, willScroll = false) {
         if (willScroll == true) {
             window.scrollTo(0, 0);
         }
         this.state.filterVisible = false;
         this.state.detailVisible = false;
-        this.state.willNeedUpdate = willUpdate;
+        this.state.listShouldUpdate = willUpdate;
     }
 
 
@@ -75,7 +75,7 @@ export default class Geek extends React.Component {
                 break;
 
             default:
-                this.state.page = action.data;
+                this.state.page = action.payload;
                 this._list_findAll(action.type === _list.List_Page_Next)
                 break;
         }
@@ -84,19 +84,19 @@ export default class Geek extends React.Component {
 
     _dispatch_list_item(action) {
         switch (action.type) {
-            case act.Action_List_Github_Author:
+            case act.Action_List_Item_Author:
                 //window.open(action.data, '_blank');
-                this._router_link_detail(action)
+                this._router_link_author_forward(action)
                 break;
-            case act.Action_List_Github_Repository:
-                this._component_should_update();
+            case act.Action_List_Item_Detail:
+                this._list_should_update(false);
                 this.setState({
                     detailVisible: true,
-                    detailObject: action.data,
+                    detailObject: action.payload
                 });
                 break;
             default:
-                alert(action.type + "-" + action.data)
+                alert(action.type + "-" + action.payload)
                 break;
         }
         return false;
@@ -104,13 +104,16 @@ export default class Geek extends React.Component {
 
     _dispatch_list_detail(action) {
 
-        return false;
+        this._list_should_update(false);
+        this.setState({
+            detailVisible: false
+        });
     }
 
     _dispatch_list_filter_popup(action) {
         switch (action.type) {
             case act.Action_List_Filter_Confirm:
-                this.state.filterData = action.data;
+                this.state.filterData = action.payload;
                 this.state.page = 1;
                 this._list_findAll(true)
                 break;
@@ -124,15 +127,14 @@ export default class Geek extends React.Component {
     }
 
     _setFilter(open = true) {
-        this._component_should_update();
+        this._list_should_update(false);
         this.setState({
-            filterVisible: open,
-            detailVisible: false
+            filterVisible: open
         });
     }
 
     //Router_link
-    _router_link_detail(action) {
+    _router_link_author_forward(action) {
         let _types = action.type.split("_");
         let _type = _types[_types.length - 1].toLowerCase();
         let _link = `/detail?_v=${_type}`;
@@ -141,7 +143,10 @@ export default class Geek extends React.Component {
             // this is the trick!
             state: {
                 modal: true,
-                channel: action
+                channel: {
+                    type:"",
+                    payload:action.payload
+                }
             }
         }
 
@@ -149,7 +154,6 @@ export default class Geek extends React.Component {
     }
 
     render() {
-        let _filterOrDetail = this.state.filterVisible || this.state.detailVisible;
         return (
             <div>
                 <List
@@ -157,7 +161,7 @@ export default class Geek extends React.Component {
                     pageSize={this.state.pageSize} total={this.state.total} page={this.state.page}
                     dispatch={this._dispatch_list.bind(this)}
                     dispatch_item={this._dispatch_list_item.bind(this)}
-                    filterOpen={_filterOrDetail}
+                    shouldUpdate={this.state.listShouldUpdate}
                     itemTag={tag.List_Item_Github}
                 />
 

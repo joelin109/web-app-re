@@ -116,7 +116,7 @@ export default class Channel extends React.Component {
                 break;
 
             default:
-                this.state.page = action.data;
+                this.state.page = action.payload;
                 this._list_findAll(action.type === _list.List_Page_Next)
                 break;
         }
@@ -125,19 +125,19 @@ export default class Channel extends React.Component {
 
     _dispatch_list_item(action) {
         switch (action.type) {
-            case act.Action_List_Article_Tag:
-                this._action_list_article_tag(action.data)
+            case act.Action_List_Item_Tag:
+                this._action_list_article_tag(action.payload)
                 break;
             case act.Action_List_Article_Range:
-                this._action_list_article_range(action.data)
+                this._action_list_article_range(action.payload)
                 break;
 
-            case act.Action_List_Article_Detail:
-                window.open(action.data, '_blank');
+            case act.Action_List_Item_Detail:
+                window.open(action.payload.coverSrc, '_blank');
                 break;
 
             default:
-                alert(action.type + "-" + action.data)
+                alert(action.type + "-" + JSON.stringify(action.payload))
                 break;
         }
         return false;
@@ -146,7 +146,7 @@ export default class Channel extends React.Component {
     _dispatch_list_filter_popup(action) {
         switch (action.type) {
             case act.Action_Filter_List_Article_Confirm:
-                this._action_list_article_filter(action.data)
+                this._action_list_article_filter(action.payload)
                 break;
 
             default:

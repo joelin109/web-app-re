@@ -27,7 +27,7 @@ class FilterListGithub extends React.Component {
 
 
     _handleCancel() {
-        this.props.dispatch({ type: "cancel", data: false })
+        this.props.dispatch({ type: "cancel", payload: false })
     };
 
     _handleConfirm() {
@@ -37,7 +37,7 @@ class FilterListGithub extends React.Component {
             created_at: this.state.createdAt,
             is_cache: this.state.fromCache
         }
-        this.props.dispatch({ type: "Action_List_Filter_Confirm", data: _data })
+        this.props.dispatch({ type: "Action_List_Filter_Confirm", payload: _data })
     };
 
     //For Filter

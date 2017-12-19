@@ -46,7 +46,6 @@ export default class News extends React.Component {
 
         service.findAll(filter)
             .then(data => {
-
                 let _results = this._mergeResult(data.articles, data.source);
                 this._component_should_update(true, true)
                 this.setState({
@@ -85,7 +84,7 @@ export default class News extends React.Component {
                 break;
 
             default:
-                this.state.page = action.data;
+                this.state.page = action.payload;
                 this._list_findAll(action.type === _list.List_Page_Next)
                 break;
         }
@@ -94,16 +93,12 @@ export default class News extends React.Component {
 
     _dispatch_list_item(action) {
         switch (action.type) {
-            case act.Action_List_Github_Repository:
-                this._component_should_update();
-                this.setState({
-                    detailVisible: true,
-                    detailObject: action.data,
-                });
+            case act.Action_List_Item_Detail:
+                window.open(action.payload.urlToImage, '_blank');
                 break;
                 
             default:
-                alert(action.type + "-" + action.data)
+                alert(action.type + " - " + JSON.stringify(action.payload))
                 break;
         }
         return false;

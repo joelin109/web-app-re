@@ -4,8 +4,6 @@ export const itemCovers = [
     'http://www.material-ui.com/images/grid-list/hats-829509_640.jpg',
     'http://www.material-ui.com/images/grid-list/vegetables-790022_640.jpg',
     'https://a0.muscache.com/im/pictures/59365499/96d38388_original.jpg',
-    'https://pbs.twimg.com/media/C56g2-jUwAEvKMV.jpg',
-    'https://pbs.twimg.com/media/C6A8S-HU4AEADwe.jpg',
     'https://a0.muscache.com/im/pictures/94934973/b26f9720_original.jpg',
     'https://a0.muscache.com/ac/pictures/9301bcaa-27d2-4c36-8535-8b7de5756eac.jpg',
     'https://a0.muscache.com/im/pictures/59365499/96d38388_original.jpg',
