@@ -1,4 +1,4 @@
-import { api_result_word } from '../data/word'
+import * as api_response from '../data/word_response.json'
 
 
 export let findAll = (data) => {
@@ -7,7 +7,7 @@ export let findAll = (data) => {
 
     return _asyncDemo(apiurl)
         .then(data => {
-            return api_result_word.result
+            return api_response.result
         })
 
 }

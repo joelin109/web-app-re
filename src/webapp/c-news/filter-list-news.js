@@ -15,12 +15,12 @@ export default class FilterListNews extends React.Component {
 
 
     _handleCancel() {
-        this.props.dispatch({ type: "cancel", data: false })
+        this.props.dispatch({ type: "cancel", payload: false })
     };
 
     _handleConfirm() {
         let type = "Action_List_Filter_Confirm"
-        this.props.dispatch({ type: type, data: this.state.stepValue })
+        this.props.dispatch({ type: type, payload: this.state.stepValue })
     };
 
     _handleStep1() {

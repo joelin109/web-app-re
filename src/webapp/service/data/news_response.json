@@ -1,4 +1,4 @@
-export const api_result_news = {
+{
   "status": "ok",
   "source": "ars-technica",
   "sortBy": "top",

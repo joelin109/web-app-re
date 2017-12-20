@@ -36,8 +36,7 @@ class ItemCard extends React.Component {
         let _title = `## ${title} \n`;
         let markdownSrc = [
             'Changes are automatically rendered as ...\n\n* Follows the',
-            '[CommonMark](http://commonmark.org/) spec\n* Renders actual, "native" React DOM ',
-            'elements',
+            '[CommonMark](http://commonmark.org/) spec',
             '\n* If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!',
             '\n* :scissors: Modern :clipboard:'
         ].join('')
