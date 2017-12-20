@@ -1,5 +1,5 @@
 import React from 'react';
-import * as service from './../../service';
+import * as constant from './../../constant/tag';
 import { Card, } from 'material-ui/Card';
 import { Button, StarRating, _colorDefault, _colorLightGray, _colorSelected } from './../../component/wui'
 
@@ -57,7 +57,7 @@ export default class ArticleListItem extends React.Component {
         this.state.status = _item.publish_status;
         this.state.updated = _item.last_update_date;
         this.state.tagID = _item.tag_id;
-        this.state.tagName = service.getTagTitle(_item.tag_id);
+        this.state.tagName = constant.getTagTitle(_item.tag_id);
 
     }
 

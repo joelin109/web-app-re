@@ -12,6 +12,8 @@ export default class Header extends React.Component {
         this.state = {
             drawerVisible: false,
         };
+
+        this._showDrawer = this._showDrawer.bind(this)
     }
 
 
@@ -43,13 +45,13 @@ export default class Header extends React.Component {
         return (
             <div>
                 <AppBar title={this.props.title} zDepth={0}
-                    iconElementRight={<HeaderRight onClick={this._dispatch_header_right.bind(this)} />}
-                    onLeftIconButtonTouchTap={this._showDrawer.bind(this)}
-                    onTitleTouchTap={this._dispatch_header_title_touch.bind(this)}
-                    style={{ position: 'fixed', top: 0, left: 0, right: 0 }} />
+                        iconElementRight={<HeaderRight onClick={this._dispatch_header_right.bind(this)}/>}
+                        onLeftIconButtonClick={this._showDrawer}
+                        onTitleClick={this._dispatch_header_title_touch.bind(this)}
+                        style={{position: 'fixed', top: 0, left: 0, right: 0}}/>
 
                 <NavLeft open={this.state.drawerVisible} login={0}
-                    dispatch={this._dispatch_nav_left.bind(this)} />
+                         dispatch={this._dispatch_nav_left.bind(this)} />
 
             </div>
         )

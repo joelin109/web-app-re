@@ -1,5 +1,5 @@
 import * as request from './request';
-import * as api from './request/api';
+import * as api from '../constant/api';
 
 let baseURL = app_API_Http_URL;
 let postBodyData = {

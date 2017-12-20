@@ -1,6 +1,6 @@
 import React from 'react';
 import { FloatingActionButton, FontIcon } from 'material-ui';
-import * as service from './../../service';
+import * as service from './../../service/dictionary';
 import * as act from './../../constant/action-type'
 import WordList from './word-list'
 import WordListFilter from './word-list-filter'

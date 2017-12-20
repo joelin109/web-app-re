@@ -75,7 +75,7 @@ export default class NewArticle extends React.Component {
         service.update(_data)
             .then(data => {
                 //Should update to the latest source.
-                let _action = { type: act.Action_Handle_Save, data: this.state.source };
+                let _action = { type: act.Action_Handle_Save, payload: this.state.source };
                 this.props.dispatch_item_article(_action);   
                 alert('save successful')
             });

@@ -18,12 +18,11 @@ export default class AdminArticle extends React.Component {
             pageSize: service.request_page_size,
             total: 0,
             page: 1,
-            listUpdate: false,
+            listShouldUpdate: false,
             filterData: "ars-technica",
             filterVisible: false,
             editVisible: false,
             editObject: {},
-            willNeedUpdate: false,
         }
 
         this._dispatch_list = this._dispatch_list.bind(this);
@@ -46,11 +45,6 @@ export default class AdminArticle extends React.Component {
 
         this._component_should_update(false);
     }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return this.state.willNeedUpdate;
-    }
-
 
 
 
@@ -87,7 +81,7 @@ export default class AdminArticle extends React.Component {
 
         service.updateStatus(updatedItem)
             .then(data => {
-                this._listItemUpdate(updatedItem, false)
+                this._listItemUpdate(updatedItem, true)
             });
 
     }
@@ -102,8 +96,7 @@ export default class AdminArticle extends React.Component {
             return item["id"] !== updatedItem["id"] ? item : updatedItem
         })*/
 
-        this.state.listUpdate = willRefresh;
-        this.state.willNeedUpdate = willRefresh;
+        this.state.listShouldUpdate = willRefresh;
         this.setState({
             results: _updatedResult
         });
@@ -116,8 +109,7 @@ export default class AdminArticle extends React.Component {
         this.state.filterVisible = false;
         this.state.detailVisible = false;
         this.state.editVisible = false;
-        this.state.listUpdate = true;
-        this.state.willNeedUpdate = willUpdate;
+        this.state.listShouldUpdate = willUpdate;
     }
 
 
@@ -161,6 +153,7 @@ export default class AdminArticle extends React.Component {
     }
 
     _dispatch_list_item_article(action) {
+
         switch (action.type) {
             case act.Action_Handle_Cancel:
                 this._setFilter(false);
@@ -196,7 +189,7 @@ export default class AdminArticle extends React.Component {
     _setFilter(open = true) {
         this._component_should_update();
         this.setState({
-            listUpdate: false,
+            listShouldUpdate: false,
             filterVisible: open,
             editVisible: false
         });
@@ -206,7 +199,7 @@ export default class AdminArticle extends React.Component {
 
         this._component_should_update();
         this.setState({
-            listUpdate: false,
+            listShouldUpdate: false,
             filterVisible: false,
             editVisible: true,
         });
@@ -214,6 +207,7 @@ export default class AdminArticle extends React.Component {
 
 
     render() {
+        //alert(JSON.stringify(this.state.listShouldUpdate))
         let _filterVisible = this.state.filterVisible;
         let _editVisible = _filterVisible ? false : this.state.editVisible;
         let _pageSize = this.state.results.length >= this.state.pageSize ? this.state.results.length : this.state.pageSize
@@ -231,7 +225,7 @@ export default class AdminArticle extends React.Component {
                     pageSize={_pageSize} total={this.state.total}
                     dispatch={this._dispatch_list}
                     dispatch_item={this._dispatch_list_item}
-                    shouldUpdate={this.state.listUpdate}
+                    shouldUpdate={this.state.listShouldUpdate}
                     itemTag={tag.List_Item_Admin_Article}
                     admin={true}
                     updateItem={'id'}
