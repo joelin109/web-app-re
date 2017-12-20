@@ -445,7 +445,7 @@
 }
 
 
-/*-------screen width > 1365px-----*/
+/*-------screen width > 1365px-----
 
 @media screen and (min-width: 1365px) {
     .recommend {
@@ -457,7 +457,7 @@
         justify-content: center;
         align-content: flex-start;
     }
-}
+}*/
 
 .recommend-widget-c {
     max-width: 320px;

@@ -1,4 +1,4 @@
-import { itemCovers } from './../data'
+import { itemCovers } from './../data/cover'
 const covers = itemCovers;
 
 const api_github_js = 'https://api.github.com/search/repositories?q=created:%3E2013-03-01%20language:javascript%20stars:%3E=3000&sort=stars';

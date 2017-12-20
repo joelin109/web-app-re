@@ -2,7 +2,7 @@ import React from 'react';
 import { FloatingButton } from './../wui'
 import ListCard from './list-card'
 import Paginator from './paginator';
-import { itemCovers, userThumbs } from './../../service/data'
+import { itemCovers, userThumbs } from './../../service/data/cover'
 const covers = itemCovers
 const thumbs = userThumbs
 
@@ -74,17 +74,18 @@ export default class List extends React.Component {
         return false;
     }
 
-    _adjustResult(result) {
+    _adjustResult(result, page) {
 
         let _result = result;
         let _random = []
+        let _length = page === 1 ? Math.floor(covers.length * 0.5) : covers.length
         Array.from(_result, (item) => {
 
-            let _random_index = Math.floor(Math.random() * covers.length)
+            let _random_index = Math.floor(Math.random() * _length)
 
             for (var i = 0; i < 10; i++) {
                 if (this._contains(_random, _random_index) === false) break;
-                _random_index = Math.floor(Math.random() * covers.length)
+                _random_index = Math.floor(Math.random() * _length)
             }
             _random.push(_random_index)
 
@@ -107,7 +108,7 @@ export default class List extends React.Component {
     }
 
     render() {
-        this.state.results = this._adjustResult(this.props.source);
+        this.state.results = this._adjustResult(this.props.source, this.state.page);
         let _itemTag = this.props.itemTag;
         let _key = `list-${_itemTag}`;
         if (this.props.page !== null && this.props.page === 1) {

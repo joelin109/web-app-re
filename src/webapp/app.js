@@ -132,7 +132,7 @@ export default class App extends React.Component {
                         <div className='root-list root-list-layout'>
 
                             <Switch location={_location}>
-                                <Route exact path='/' component={News} />
+                                <Route exact path='/' component={Geek} />
                                 <Route path='/article?_s=:source' component={News} />
                                 <Route path='/geek?_t=:channel' component={Geek} />
                                 <Route path='/channel?_t=:id' component={Channel} />

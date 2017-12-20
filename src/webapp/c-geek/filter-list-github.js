@@ -10,19 +10,21 @@ class FilterListGithub extends React.Component {
         super();
 
         const twoYearAgo = new Date();
-        twoYearAgo.setFullYear(twoYearAgo.getFullYear() - 1);
-        twoYearAgo.setMonth(3, 26);
+        twoYearAgo.setFullYear(twoYearAgo.getFullYear() - 4);
+        twoYearAgo.setMonth(4, 23);
         twoYearAgo.setHours(0, 0, 0, 0);
 
         this.state = {
             stepIndex: 0,
             stepValue: [0, 10],
             language: 'JavaScript',
-            starSlider: 6300,
+            starSlider: 7500,
             createdAt: twoYearAgo,
             fromCache: false,
 
         };
+
+        this._handle_date_picker = this._handle_date_picker.bind(this)
     }
 
 
@@ -42,6 +44,10 @@ class FilterListGithub extends React.Component {
 
     //For Filter
     _handle_language_choose(event, value) {
+        if(this.setState.language !== value && value === 'Python'){
+            this.state.createdAt = new Date("04 26,2016")
+
+        }
         this.setState({ language: value });
     };
 
@@ -120,7 +126,7 @@ class FilterListGithub extends React.Component {
                     locale="en-US"
                     autoOk={true}
                     firstDayOfWeek={0}
-                    onChange={this._handle_date_picker.bind(this)}
+                    onChange={this._handle_date_picker}
                 />
             </div>
 
