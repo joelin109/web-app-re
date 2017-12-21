@@ -1,13 +1,11 @@
-import * as request from './request';
 import * as api from '../constant/api';
+import * as request from './';
 
-let baseURL = app_API_Http_URL;
 
 export let findAll = (filter, bodyData) => {
 
     let _bodyData = baseAPI_HTTP_BodyData
-    let _apiURL = baseURL + api.APIURL_Content_Dictionary_List;
-    return request.post(_apiURL, _bodyData)
+    return request.post(api.APIURL_Content_Dictionary_List, _bodyData)
         .then(data => {
             return data.result
         })

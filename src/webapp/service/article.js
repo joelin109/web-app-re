@@ -1,9 +1,8 @@
-import * as request from './request';
 import * as api from '../constant/api';
+import * as request from './';
 
-let baseURL = app_API_Http_URL;
 let postBodyData = {
-    "filter": { "page_num": 1, "page_size": 18 },
+    "filter": {"page_num": 1, "page_size": 18},
     "article_id": "besichtigen"
 };
 
@@ -15,17 +14,18 @@ export let findAll = (filter) => {
     postBodyData.filter.page_size = request_page_size;
 
     let _bodyData = postBodyData
-    let _apiURL = baseURL + api.APIURL_Content_Article_List;
-    return request.post(_apiURL, _bodyData)
-        .then(data => {
-            return data.result
+    return request.post(api.APIURL_Content_Article_List, _bodyData)
+        .then(response => {
+            //alert(JSON.stringify(response))
+            //alert(JSON.stringify(typeof response.data.result))
+            return response.result
         })
 }
 
 export let detail = (filter) => {
+
     let _bodyData = filter
-    let _apiURL = baseURL + api.APIURL_Content_Article_Detail;
-    return request.post(_apiURL, _bodyData)
+    return request.post(api.APIURL_Content_Article_Detail, _bodyData)
         .then(data => {
             return data.result
         })
@@ -33,18 +33,18 @@ export let detail = (filter) => {
 }
 
 export let update = (data) => {
+
     let _bodyData = data;
-    let _apiURL = baseURL + api.APIURL_Content_Article_Post;
-    return request.post(_apiURL, _bodyData)
+    return request.post(api.APIURL_Content_Article_Post, _bodyData)
         .then(data => {
             return data.result
         })
 }
 
 export let updateStatus = (data) => {
+
     let _bodyData = data;
-    let _apiURL = baseURL + api.APIURL_Content_Article_Status_Update;
-    return request.post(_apiURL, _bodyData)
+    return request.post(api.APIURL_Content_Article_Status_Update, _bodyData)
         .then(data => {
             return data.result
         })
@@ -53,8 +53,7 @@ export let updateStatus = (data) => {
 export let crawlArticle = (filter) => {
 
     let _bodyData = filter;
-    let _apiURL = baseURL + api.APIURL_Content_Crawler_Article;
-    return request.post(_apiURL, _bodyData)
+    return request.post(api.APIURL_Content_Crawler_Article, _bodyData)
         .then(data => {
             return data
         })
@@ -64,13 +63,14 @@ export let crawlArticle = (filter) => {
 export let crawlHttpUrl = (filter) => {
 
     let _bodyData = filter
-    let _apiURL = baseURL + api.APIURL_Content_Crawler_Http_URL;
-    return request.post(_apiURL, _bodyData)
+    return request.post(api.APIURL_Content_Crawler_Http_URL, _bodyData)
         .then(data => {
             return data.result
         })
 
 }
+
+
 
 
 

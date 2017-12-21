@@ -1,4 +1,6 @@
+import axios from 'axios'
 import { itemCovers } from './../data/cover'
+
 const covers = itemCovers;
 
 const api_github_js = 'https://api.github.com/search/repositories?q=created:%3E2013-03-01%20language:javascript%20stars:%3E=3000&sort=stars';
@@ -23,10 +25,8 @@ export let findAll = (data) => {
     if (typeof(_isCache) !== "undefined" && _isCache === false) {
 
         apiurl = _apiBase + _createdAt + '%20language:' + _language + '%20stars:>=' + _star + '&sort=stars&page=' + _page;
-        return fetch(apiurl)
-            .then(response => {
-                return response.json();
-            })
+        return axios.get(apiurl).then(response => response.data)
+
     } else {
 
         let api_result = {
