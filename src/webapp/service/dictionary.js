@@ -1,5 +1,5 @@
 import * as api from '../constant/api';
-import * as request from './';
+import * as request from './request';
 
 
 export let findAll = (filter, bodyData) => {

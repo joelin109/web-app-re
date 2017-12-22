@@ -1,12 +1,6 @@
-import axios from 'axios'
-import { itemCovers } from './../data/cover'
-
-const covers = itemCovers;
+import * as request from './../request';
 
 const api_github_js = 'https://api.github.com/search/repositories?q=created:%3E2013-03-01%20language:javascript%20stars:%3E=3000&sort=stars';
-const api_github_ts = 'https://api.github.com/search/repositories?q=created:%3E2013-03-13%20language:typescript%20stars:%3E=3000&sort=stars';
-const api_github_go = 'https://api.github.com/search/repositories?q=created:%3E2013-03-01%20language:golang%20stars:%3E=3000&sort=stars';
-const api_github_py = 'https://api.github.com/search/repositories?q=created:%3E2013-03-01%20language:python%20stars:%3E=3000&sort=stars';
 
 export let findAll = (data) => {
 
@@ -25,7 +19,7 @@ export let findAll = (data) => {
     if (typeof(_isCache) !== "undefined" && _isCache === false) {
 
         apiurl = _apiBase + _createdAt + '%20language:' + _language + '%20stars:>=' + _star + '&sort=stars&page=' + _page;
-        return axios.get(apiurl).then(response => response.data)
+        return request.get(apiurl).then(response => response)
 
     } else {
 
@@ -38,22 +32,11 @@ export let findAll = (data) => {
         return _asyncDemo(apiurl)
             .then(data => {
                 return api_result;
-                //return _adjustResult(api_result);
             })
     }
 
 }
 
-function _adjustResult(result) {
-
-    let _result = result;
-    Array.from(_result.items, (item) => {
-        item["coverSrc"] = covers[Math.floor(Math.random() * covers.length)];
-        return item
-    })
-
-    return _result;
-}
 
 function _asyncDemo(api) {
     var promise = new Promise(function(resolve, reject) {

@@ -1,5 +1,5 @@
 import * as api from '../constant/api';
-import * as request from './';
+import * as request from './request';
 
 let postBodyData = {
     "filter": {"page_num": 1, "page_size": 18},

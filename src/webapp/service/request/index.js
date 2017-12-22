@@ -5,8 +5,8 @@ import axios from 'axios'
 
 function httpUrl(url) {
 
-    let baseURL = typeof app_API_Http_URL === "undefined" ? "" : app_API_Http_URL
-    if (url.indexOf('http:') >= 0) {
+    let baseURL = typeof app_API_Host_URL === "undefined" ? "" : app_API_Host_URL
+    if (url.indexOf('http') >= 0) {
         baseURL = ""
     }
 
@@ -35,4 +35,10 @@ export let post = (url, data) => {
     return axios.post(_apiURL, _httpBody)
         .then(response => response.data)
 
+};
+
+export let get = (url) => {
+
+    let _apiURL = httpUrl(url);
+    return axios.get(_apiURL).then(response => response.data)
 };

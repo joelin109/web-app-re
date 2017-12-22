@@ -1,4 +1,4 @@
-let baseURL = app_API_Http_URL;
+import * as request from './../request';
 
 export let findAll = (values) => {
     let qs = "";
@@ -8,16 +8,8 @@ export let findAll = (values) => {
         }).join('&');
         qs = "?" + qs;
     }
-    let apiurl = baseURL + "/products" + qs;
-    /*return request({url: apiurl})
-     .then(data => data = JSON.parse(data))*/
 
-    return fetch(apiurl)
-        .then(response => response.json())
+    let _url =  "/products" + qs;
+    return request.get(_url)
 
-}
-
-export let findById = () => {
-    return request({url: baseURL + "/products/" + id})
-        .then(data => data = JSON.parse(data))
 }

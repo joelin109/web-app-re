@@ -1,5 +1,4 @@
 import * as api_response from '../data/news_response.json'
-//c53e3bc3f12b4f8ba9b7505d14a4d9f3
 
 export let findAll = (data) => {
     let _sortBy = data.filter === 'der-tagesspiegel' ? 'sortBy=latest' : 'sortBy=top';
