@@ -15,15 +15,26 @@ module.exports = {
         //'react-dom': 'ReactDOM'
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            include: path.resolve(__dirname, 'src'),
-            query: {
-                cacheDirectory: true,
-                presets: ['es2015', 'react', "stage-0"]
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                include: path.resolve(__dirname, 'src'),
+                query: {
+                    cacheDirectory: true,
+                    presets: ['es2015', 'react', "stage-0"]
+                }
+            },
+            {
+                test: /\.scss$/,
+                loader: 'style!css!sass'
             }
-        }]
+        ]
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src/webapp'),
+        }
     },
     stats: {
         colors: true
