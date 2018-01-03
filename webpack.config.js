@@ -24,12 +24,13 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015', 'react', "stage-0"]
+                    presets: ['es2015', 'react', "stage-0"],
+                    plugins: ["transform-decorators-legacy"]
                 }
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css!sass'
+                loader: 'style-loader!css-loader!sass-loader'
             }
         ]
     },
