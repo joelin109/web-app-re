@@ -7,11 +7,52 @@ import HeaderChannel from './component/header/channel';
 import Recommend from './component/recommend';
 
 import News from './c-news';
-import Channel from './c-channel';
+/*
 import Geek from './c-geek';
-import Deutsch from './c-deutsch'
+import Channel from './c-channel';
+import Deutsch from './c-deutsch'*/
 import DetailGithub from './Component/detail/detail-github';
 
+const createComponent = (component, userRequired, props) => {
+    if (userRequired) {
+        location.href = "/login?go=" + encodeURIComponent(location.href);
+        return
+    }
+    return <Bundle load={component}>{Component => (Component ? <Component {...props} /> : <Loading />)}</Bundle>
+};
+
+export const asyncComponent = loadComponent => (
+    class AsyncComponent extends React.Component {
+        state = {
+            Component: null,
+        }
+
+        componentWillMount() {
+            if (this.hasLoadedComponent()) {
+                return;
+            }
+
+            loadComponent()
+                .then(module => module.default)
+                .then((Component) => {
+                    this.setState({ Component });
+                })
+                .catch((err) => {
+                    console.error(`Cannot load component in <AsyncComponent />`);
+                    throw err;
+                });
+        }
+
+        hasLoadedComponent() {
+            return this.state.Component !== null;
+        }
+
+        render() {
+            const { Component } = this.state;
+            return (Component) ? <Component {...this.props} /> : null;
+        }
+    }
+);
 
 export default class App extends React.Component {
 
@@ -121,6 +162,10 @@ export default class App extends React.Component {
         const _isStateModal = (location.state && location.state.modal)
         const _isModal = !!(_isStateModal && _isUnInitial)
         const _location = _isModal ? this.state.previousLocation : location;
+
+        const Geek = asyncComponent(() => import(/* webpackChunkName: "chunk/index.bundle.geek" */ "./c-geek"))
+        const Channel = asyncComponent(() => import(/* webpackChunkName: "chunk/index.bundle.channel" */ "./c-channel"))
+        const Deutsch = asyncComponent(() => import(/* webpackChunkName: "chunk/index.bundle.deutsch" */ "./c-deutsch"))
 
         return (
             <div >

@@ -10,7 +10,9 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'www'),
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].[chunkhash:4].js'
+
     },
     externals: {
         //'react': 'React',
@@ -42,8 +44,8 @@ module.exports = {
     stats: {
         colors: true
     },
-    devtool: 'eval',
-    //devtool: 'cheap-module-source-map',
+    //devtool: 'eval',
+    devtool: 'cheap-module-source-map',
 
     plugins: [
         new webpack.DllReferencePlugin({
