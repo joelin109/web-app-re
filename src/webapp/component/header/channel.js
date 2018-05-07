@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { TButton } from './../wui'
 import * as act from './../../constant/action-type';
 
@@ -7,7 +7,7 @@ const _geek='Geek';
 const _channel='Channel';
 const _deutsch='Deutsch';
 
-export default class HeaderChannel extends Component {
+export default class HeaderChannel extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -58,6 +58,7 @@ export default class HeaderChannel extends Component {
 
 
   render() {
+    alert('Test header channel performance')
     let _hidden = this.props.hidden;
     let _content = <div className="header-channel-hidden" />;
     if (_hidden === false) {

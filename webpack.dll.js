@@ -5,15 +5,13 @@ const vendor_dll = [
     'react',
     'react-dom',
     'react-router-dom',
-    'material-ui',
-    'react-tap-event-plugin'
+    'material-ui'
 ];
 const vendor_admin_dll = [
     'react',
     'react-dom',
     'react-router-dom',
     'material-ui',
-    'react-tap-event-plugin',
     'react-draft-wysiwyg'
 ];
 
