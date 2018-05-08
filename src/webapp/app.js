@@ -5,6 +5,7 @@ import * as act from "./constant/action-type";
 import Header from "./component/header";
 import HeaderChannel from "./component/header/channel";
 import Recommend from "./component/recommend";
+import {asyncComponent, baseHref} from "./util";
 
 import News from "./c-news";
 /*
@@ -13,49 +14,6 @@ import Channel from './c-channel';
 import Deutsch from './c-deutsch'*/
 import DetailGithub from "./Component/detail/detail-github";
 
-const createComponent = (component, userRequired, props) => {
-  if (userRequired) {
-    location.href = "/login?go=" + encodeURIComponent(location.href);
-    return;
-  }
-  return (
-    <Bundle load={component}>
-      {Component => (Component ? <Component {...props} /> : <Loading />)}
-    </Bundle>
-  );
-};
-
-export const asyncComponent = loadComponent =>
-  class AsyncComponent extends React.Component {
-    state = {
-      Component: null
-    };
-
-    componentWillMount() {
-      if (this.hasLoadedComponent()) {
-        return;
-      }
-
-      loadComponent()
-        .then(module => module.default)
-        .then(Component => {
-          this.setState({ Component });
-        })
-        .catch(err => {
-          console.error(`Cannot load component in <AsyncComponent />`);
-          throw err;
-        });
-    }
-
-    hasLoadedComponent() {
-      return this.state.Component !== null;
-    }
-
-    render() {
-      const { Component } = this.state;
-      return Component ? <Component {...this.props} /> : null;
-    }
-  };
 
 export default class App extends React.Component {
   constructor(props) {
@@ -189,7 +147,7 @@ export default class App extends React.Component {
         <div className="loc-center-box">
           <div className="root-body">
             <div className="root-list root-list-layout">
-              <Switch location={_location}>
+              <Switch>
                 <Route exact path="/" component={News} />
                 <Route path="/article?_s=:source" component={News} />
                 <Route path="/geek?_t=:channel" component={Geek} />
