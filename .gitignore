@@ -3,6 +3,7 @@
 vendor/
 node_modules/
 www/dll/
+www/chunk/
 .idea
 *.xml
 *.log
