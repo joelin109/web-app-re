@@ -8,8 +8,6 @@ import AdminWord from './admin/word';
 import AdminArticle from './admin/article';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
 import { appTheme } from './theme'
 
 

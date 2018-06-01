@@ -58,7 +58,6 @@ export default class HeaderChannel extends PureComponent {
 
 
   render() {
-    alert('Test header channel performance')
     let _hidden = this.props.hidden;
     let _content = <div className="header-channel-hidden" />;
     if (_hidden === false) {
